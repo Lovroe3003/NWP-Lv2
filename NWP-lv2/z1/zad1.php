@@ -27,7 +27,7 @@ if($result->num_rows > 0){
         $columns = array_keys($result->fetch_assoc());
         $column_list = implode(", ", $columns);
     
-        // vracanje pokazivaca na početak rezultata
+        // vracanje pokazivaca na pocetak rezultata
         $result->data_seek(0);
     
         while ($row = $result->fetch_assoc()) {
@@ -46,9 +46,9 @@ if($result->num_rows > 0){
     fclose($backup_handle);
 
     //sazimanje datoteke
-    $gzipped_backup_file = $backup_file . '.gz';
-    $gzipped_content = gzencode(file_get_contents($backup_file), 9);
-    file_put_contents($gzipped_backup_file, $gzipped_content);
+    $compressed_backup_file = $backup_file . '.gz';
+    $compressed_content = gzencode(file_get_contents($backup_file), 9);
+    file_put_contents($compressed_backup_file, $compressed_content);
 
     unlink($backup_file);
 

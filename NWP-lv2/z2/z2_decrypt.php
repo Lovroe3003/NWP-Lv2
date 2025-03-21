@@ -37,7 +37,7 @@ foreach ($uploaded_files as $uploaded_file) {
 
     $encryption_key = md5('jed4n j4k0 v3l1k1 kljuc'); 
 
-    //Dekriptiranje sadrzaja datoteke
+    //dekriptiranje sadrzaja datoteke
     $decrypted_data = decryptData($encrypted_data, $encryption_key);
 
     //dohvacanje originalnog naziva datoteke
